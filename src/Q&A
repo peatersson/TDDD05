@@ -1,0 +1,53 @@
+Q1: What are the reasons of using generics here? What are the benefits? Discuss
+with your partner and elaborate.
+
+A1: We want to have stronger type checks when compiling instead of runtime.
+Those are easier to fix compared to runtime-errors.
+
+
+Q2: Compile and analyze compiler output. Given that “everything is an Object” in
+Java what is the cause of the problem reported by the compiler, if any?
+
+A2: We are trying to put an object into the storage, but storage takes
+BankAccount. This would mean contravariance, which is not possible. Similiar to
+the second error we get (cannot find symbol), myAccount is of instance object,
+not BankAccount, and the function .deposit is not callable for an object.
+
+
+Q3: How does this affect the compilation process? What is the problem, if any?
+What does the myAccount variable hold when the code is executed? Discuss with
+your partner whether your diagnosis in Q2 was correct.
+
+A3: We only get 1 error now, which tells us that we cannot convert 'object'
+into 'BankAccount' i.e. baCls.newInstance() is not the same type as
+myAccount. myAccount is of the type BankAccount, which is what we
+predicted in Q2 when it instead was an object.
+
+
+Q4: What does the dynamic cast do here? Is it the compiler that performs the
+cast operation or the Java runtime environment (JVM)? Is this code safe*?
+
+A4: We are casting baCls.newInstance() to the 'BankAccount'-type. This is made by the JVM
+i.e. in runtime and not when we compile. It is not safe, since we could easily
+change the cast to 'BankAccount' into something else. Changing 'BankAccount.class'
+to 'String.class' doesnt change anything. The code still compiles even though
+we are doing something wrong.
+
+
+Q5: Explain the compiler output? Are there errors? What is the reason? What does
+it say about the role of generics?
+
+A5: The compiler doesn't output any errors. It is only giving info regarding
+the previously done cast, which is says is redundant. The reason for
+this is that the addition of '<BankAccount>' made the instantiation generic,
+telling the compiler that baCls is a class of type BankAccount. Generics gives
+us a safe way to instantiate new classes by letting the compiler check our code
+for errors, before we actually execute the code.
+
+
+Q6: What is the run-time output? Reason why you get such an output and how does
+this relate to generics and their use with reflective instantiation of objects.
+
+A6: We get the current saldo in our storage (115.0) followed by the message
+"EQUAL". This is happening because the generics (of our different storages)
+is not validated in runtime, making the if-statement true.
