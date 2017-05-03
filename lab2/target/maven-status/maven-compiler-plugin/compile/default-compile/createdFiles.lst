@@ -1,3 +1,6 @@
 config/ServletInitializer.class
 config/AppConfig.class
+controller/CarController.class
 controller/HelloController.class
+domain/Car.class
+Service/CarService.class
