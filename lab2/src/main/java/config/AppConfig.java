@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan(basePackages = {"Service","controller"})
 public class AppConfig {
+	// code for the car-tutorial
 	@Bean
 	public ViewResolver jspViewResolver() {
 	    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
