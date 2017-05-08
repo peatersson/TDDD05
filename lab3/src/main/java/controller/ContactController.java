@@ -30,7 +30,8 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public void contactAddSubmit(@ModelAttribute Contact contact) {
+	public String contactAddSubmit(@ModelAttribute Contact contact) {
 		contactService.add(contact);
+		return "redirect:/car/list";
 	}
 }
