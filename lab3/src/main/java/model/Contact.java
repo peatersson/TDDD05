@@ -3,16 +3,8 @@ package model;
 public class Contact {
 	private String name;
 	private String mail;
-	private int number;
+	private String number;
 	private String info;
-	
-	public Contact(String name, String mail, int number, String info){
-		this.name = name;
-		this.mail = mail;
-		this.number = number;
-		this.info = info;
-	}
-	
 	
 	public String getName(){
 		return name;
@@ -21,7 +13,6 @@ public class Contact {
 		this.name = newName;
 	}
 
-	
 	public String getMail(){
 		return mail;
 	}
@@ -29,14 +20,12 @@ public class Contact {
 		this.mail = newMail;
 	}
 	
-	
-	public int getNumber(){
+	public String getNumber(){
 		return number;
 	}
-	public void setNumber(int newNumber){
+	public void setNumber(String newNumber){
 		this.number = newNumber;
 	}
-	
 	
 	public String getInfo(){
 		return info;
