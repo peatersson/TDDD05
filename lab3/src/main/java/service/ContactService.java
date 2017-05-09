@@ -21,10 +21,29 @@ public class ContactService {
 	}
  
 	public List<Contact> findAllContacts() {
+		//add code for DB-fetching here
+		
+		
 		return contactList;
 	}
 	
 	public void add(Contact contact) {
+		//add code for DB-updating here
+		
+		
 		contactList.add(contact);
+	}
+	
+	public Contact findContactByName(String name){
+		//add code for DB-searching here
+		
+		
+		//temporary solution (only locally)
+	    for(int i = 0; i < contactList.size(); ++i){
+	    	if (contactList.get(i).getName() == name){
+	    		return contactList.get(i);
+	    	}
+	    }
+	    return null;
 	}
 }

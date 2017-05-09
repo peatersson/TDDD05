@@ -19,19 +19,28 @@ public class ContactController {
 	@Autowired
 	private ContactService contactService;
  
-	@RequestMapping("/show")
+	@RequestMapping(value="/show")
 	public void contactList(Model model) {
 		List<Contact> contactList = contactService.findAllContacts();
 		model.addAttribute("contactList", contactList);
 	}
 	
-	@RequestMapping("/add")
-	public void carAdd() {
+	@RequestMapping(value="/show", method=RequestMethod.POST)
+	public void searchSubmit(String name) {
+		Contact c = contactService.findContactByName(name);
+		
+	}
+	
+	@RequestMapping(value="/add")
+	public void add() {
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String contactAddSubmit(@ModelAttribute Contact contact) {
+	public String addSubmit(@ModelAttribute Contact contact) {
 		contactService.add(contact);
+		//add code for DB-handling here
+		
+		
 		return "redirect:/car/list";
 	}
 }
