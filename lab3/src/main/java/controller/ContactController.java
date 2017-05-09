@@ -1,6 +1,5 @@
 package controller;
 
-
 import service.ContactService;
 
 import java.util.List;
@@ -41,6 +40,6 @@ public class ContactController {
 		//add code for DB-handling here
 		
 		
-		return "redirect:/car/list";
+		return "redirect:/show";
 	}
 }
