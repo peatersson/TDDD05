@@ -5,6 +5,7 @@ public class Contact {
 	private String mail;
 	private String number;
 	private String info;
+	private int id;
 	
 	public String getName(){
 		return name;
@@ -32,5 +33,12 @@ public class Contact {
 	}
 	public void setInfo(String newInfo){
 		this.info = newInfo;
+	}
+	
+	public int getId(){
+		return id;
+		}
+	public void setId(int newID){
+		this.id = newID;
 	}
 }

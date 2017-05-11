@@ -6,7 +6,7 @@
  
 	<c:forEach items="${contactList}" var="contact">
 		<p>
-			Name: ${contact.name}, mail: ${contact.mail}, number: ${contact.number}, info: ${contact.info}
+			ID: ${contact.id}, Name: ${contact.name}, mail: ${contact.mail}, number: ${contact.number}, info: ${contact.info}
 		</p>
 	</c:forEach>
  

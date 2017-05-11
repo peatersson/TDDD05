@@ -13,17 +13,10 @@ import model.Contact;
 @Service
 public class ContactService {
 	private List<Contact> contactList = new LinkedList<Contact>();
+	private DatabaseService db = new DatabaseService();
  
 	ContactService() {
-		Contact c1 = new Contact();
-		c1.setName("Niklas Pettersson");
-		c1.setMail("nikpe353@student.liu.se");
-		c1.setNumber("0705320076");
-		c1.setInfo("Student");
-		contactList.add(c1);
-		
-		DatabaseService db = new DatabaseService();
-		if (db.initDB()) {
+		if (this.db.initDB()) {
 			System.out.println("db initialized");
 		} 
 		else {
@@ -32,17 +25,12 @@ public class ContactService {
 	}
  
 	public List<Contact> findAllContacts() {
-		//add code for DB-fetching here
-		
-		
-		return contactList;
+		this.contactList = this.db.getContacts();
+		return this.contactList;
 	}
 	
-	public void add(Contact contact) {
-		//add code for DB-updating here
-		
-		
-		contactList.add(contact);
+	public boolean add(Contact contact) {
+		return this.db.addContact(contact);		
 	}
 	
 	public Contact findContactByName(String name){
@@ -56,5 +44,9 @@ public class ContactService {
 	    	}
 	    }
 	    return null;
+	}
+	
+	public boolean edit(Contact contact){
+		return this.db.editContact(contact);
 	}
 }

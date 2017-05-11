@@ -36,10 +36,30 @@ public class ContactController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String addSubmit(@ModelAttribute Contact contact) {
-		contactService.add(contact);
-		//add code for DB-handling here
+		boolean success = contactService.add(contact);
 		
+		if (success){
+			return "redirect:/show";
+		}
+		else{
+			return "redirect:/error";
+		}
 		
-		return "redirect:/show";
+	}
+	
+	@RequestMapping(value="/edit")
+	public void edit() {
+	}
+	
+	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	public String editSubmit(@ModelAttribute Contact contact) {
+		boolean success = contactService.edit(contact);
+		if (success){
+			return "redirect:/show";
+		}
+		else{
+			return "redirect:/error";
+		}
+		
 	}
 }
