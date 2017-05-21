@@ -26,7 +26,7 @@ public class ContactController {
 	
 	@RequestMapping(value="/show", method=RequestMethod.POST)
 	public void searchSubmit(String name) {
-		Contact c = contactService.findContactByName(name);
+		//Contact c = contactService.findContactByName(name);
 		
 	}
 	

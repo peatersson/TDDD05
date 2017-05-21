@@ -16,7 +16,7 @@ public class AppConfig {
 	public ViewResolver jspViewResolver() {
 	    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 	    resolver.setViewClass(JstlView.class);
-	    resolver.setPrefix("/WEB-INF/jsp/");
+	    resolver.setPrefix("/view/");
 	    resolver.setSuffix(".jsp");
 	    return resolver;
 	}
