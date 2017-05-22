@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <html>
-	<body style="color:red">
+<body style="text-align: center">
+	<br><br>
+
 	
+	<br>
 	
- 
-	Welcome to the menu
- 
-	</body>
+</body>
 </html>
