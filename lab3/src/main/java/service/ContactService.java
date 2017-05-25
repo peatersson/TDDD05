@@ -30,6 +30,8 @@ public class ContactService {
 		return this.db.addContact(contact);		
 	}
 	
+	
+	// not implemented
 	public Contact findContactByName(String name){
 		//add code for DB-searching here
 		

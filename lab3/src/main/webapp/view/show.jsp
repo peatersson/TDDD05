@@ -3,9 +3,8 @@
 <html>
 	<body>
 		<div style="width:70%;height:100%;border:1px solid #000;margin: auto;background-color: lightblue;">
-
 			<%@include file="header.jsp" %>
-	 
+			
 			<h1>Contacts</h1>
 		 
 			<c:forEach items="${contactList}" var="contact">
@@ -16,6 +15,5 @@
 			
 			<%@include file="footer.jsp" %>
 		</div>
-	 
 	</body>
 </html>
